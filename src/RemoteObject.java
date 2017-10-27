@@ -2,9 +2,9 @@ import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class MockEffectenBeurs extends UnicastRemoteObject implements IEffectenBeurs, Serializable {
+public class RemoteObject extends UnicastRemoteObject implements IRemoteObject, Serializable {
 
-    MockEffectenBeurs() throws RemoteException {
+    RemoteObject() throws RemoteException {
     }
 
     public void sendMessage(rmiObject _rmiObject) throws RemoteException {

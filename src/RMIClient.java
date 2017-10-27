@@ -6,7 +6,7 @@ import java.util.TimerTask;
 
 public class RMIClient {
     private Registry registry;
-    private IEffectenBeurs effectenBeurs;
+    private IRemoteObject effectenBeurs;
 
 
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class RMIClient {
     public RMIClient() {
         try {
             this.registry = LocateRegistry.getRegistry("localhost", 8086);
-            effectenBeurs = (IEffectenBeurs) registry.lookup("registryName");
+            effectenBeurs = (IRemoteObject) registry.lookup("registryName");
         } catch (Exception e) {
             e.printStackTrace();
         }

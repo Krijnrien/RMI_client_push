@@ -5,7 +5,7 @@ import java.rmi.registry.Registry;
 public class RMIServer{
 	private static final int portNr = 8086;
 	private Registry registry = null;
-	private MockEffectenBeurs effectenBeurs = null;
+	private RemoteObject effectenBeurs = null;
 
 	public static void main(String[] args) throws RemoteException
 	{
@@ -14,7 +14,7 @@ public class RMIServer{
 
 	public RMIServer() throws RemoteException
 	{
-		effectenBeurs = new MockEffectenBeurs();
+		effectenBeurs = new RemoteObject();
 		registry = LocateRegistry.createRegistry(portNr);
 		registry.rebind("registryName", effectenBeurs);
 	}
